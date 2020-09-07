@@ -4,7 +4,7 @@
   <% @tweets_user_show.each do |tweet| %>
     <div class='content_post' style="background-image: url(<%= tweet.image%>);">
       <%= simple_format(tweet.text)%>
-      <span class='namea'><%= tweet.name %></span>
+      <span class='namea'><%= tweet.user.nickname %></span>
     </div>
   <% end %>
 </div>
