@@ -12,6 +12,12 @@ class TweetsController < ApplicationController
     Tweet.create(tweet_params)
   end
 
+  def destroy
+    tweet_delete = Tweet.find(params[:id])
+    tweet_delete.destroy
+    # redirect_to root_path
+  end
+
 
   private
   def tweet_params
