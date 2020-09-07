@@ -18,6 +18,16 @@ class TweetsController < ApplicationController
     # redirect_to root_path
   end
 
+  def edit
+    @tweet_edit = Tweet.find(params[:id])
+  end
+
+  def update
+    tweet_update = Tweet.find(params[:id])
+    tweet_update.update(tweet_params)
+    # redirect_to root_path
+  end
+
 
   private
   def tweet_params
