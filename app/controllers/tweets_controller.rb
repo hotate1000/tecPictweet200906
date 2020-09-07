@@ -4,7 +4,8 @@ class TweetsController < ApplicationController
 
 
   def index
-    @tweets_index = Tweet.all
+    # @tweets_index = Tweet.all
+    @tweets_index = Tweet.includes(:user)
   end
 
   def new
@@ -40,7 +41,8 @@ class TweetsController < ApplicationController
   private
   def tweet_params
     # params.require(:tweet).permit(:name, :text, :image)
-    params.require(:tweet).permit(:name, :text, :image).merge(user_id: current_user.id)
+    # params.require(:tweet).permit(:name, :text, :image).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
   end
 
   # def set_tweet

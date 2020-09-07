@@ -11,7 +11,8 @@
       </div>
       <%= simple_format(tweet.text) %>
       <span class="name">
-        <%= tweet.name %>
+        <%= link_to tweet.user.nickname, user_path(tweet.user.id) %>
+ 
       </span>
     </div>
   <% end %>
