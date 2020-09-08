@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   # resources :tweets, only: [:index, :new, :create, :destroy, :edit, :update, :show]
   resources :tweets do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
+    collection do
+      get 'search'
+    end
   end
   
   resources :users, only: [:show]
